@@ -2,6 +2,9 @@ package com.kata.model;
 
 import java.util.List;
 
+/*
+ *
+ */
 public class Cart {
 
     private final List<OrderItem> orderItems;
