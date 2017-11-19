@@ -11,7 +11,8 @@ public class OrderShould {
 
     private Cart cart;
     private PaymentDetails paymentDetails;
-    private Order order;
+    private Order onlineOrder;
+    private Order pointOfSaleOrder;
 
     @Before
     public void setUp() {
@@ -25,12 +26,19 @@ public class OrderShould {
         this.paymentDetails.setCreditCardNumber("1234-5678-9101-1121");
         this.paymentDetails.setExpiresMonth("04");
         this.paymentDetails.setExpiresYear("2018");
-        this.order = new Order();
+        this.onlineOrder = new OnlineOrder(this.cart, this.paymentDetails);
+        this.pointOfSaleOrder = new PointOfSaleOrder(this.cart, this.paymentDetails);
     }
 
     @Test
     public void
-    checkout_a_cart() throws Exception {
-        order.checkout(cart, paymentDetails, true);
+    checkout_a_online_cart() throws Exception {
+        onlineOrder.checkout();
+    }
+
+    @Test
+    public void
+    checkout_point_of_sale_by_credit_card() throws Exception {
+        pointOfSaleOrder.checkout();
     }
 }
