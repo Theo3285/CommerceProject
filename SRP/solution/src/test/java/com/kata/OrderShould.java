@@ -32,7 +32,7 @@ public class OrderShould {
 
     @Test
     public void
-    checkout_a_online_cart() throws Exception {
+    checkout_an_online_cart() throws Exception {
         onlineOrder.checkout();
     }
 
