@@ -12,14 +12,12 @@ import com.kata.services.*;
  */
 public class OnlineOrder extends Order {
 
-    private final PaymentDetails paymentDetails;
     private final Notifier notifier;
     private final Reservable reservable;
     private final Payable payable;
 
     public OnlineOrder(Cart cart, PaymentDetails paymentDetails) {
         super(cart);
-        this.paymentDetails = paymentDetails;
         notifier = new NotificationService(cart);
         reservable = new InventoryService(cart);
         payable = new PaymentProcessor(cart, paymentDetails);
