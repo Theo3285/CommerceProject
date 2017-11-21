@@ -33,10 +33,4 @@ public class CartTotalAmountShouldReturn {
         cart.add(new OrderItem("SPECIAL_CANDYBAR",2));
         assertThat(cart.totalAmount(), is(0.80));
     }
-
-    @Test
-    public void twoDollarsWithSixSpecialItem() {
-        cart.add(new OrderItem("SPECIAL_CANDYBAR",6));
-        assertThat(cart.totalAmount(), is(2));
-    }
 }
